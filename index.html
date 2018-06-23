@@ -9,12 +9,13 @@
   <body>
     <form name="myForm" onsubmit="return false">
       <div id = "ta-wrapper">
-        <textarea id="ta" name="txtDescEd" cols="60" rows="10"></textarea>
+        <div contenteditable="=true" id="ta" name="txtDescEd"></div>
       </div>
       <input type="text" id="textBox" onkeypress="return Player.readInput(event)">
     </form>
     <script src="Caravan.js"></script>
     <script src="Game.js"></script>
+    <script src="levels\level0.js"></script>
     <script src="jquery-3.3.1.min.js"></script>
   </body>
 </html>

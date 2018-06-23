@@ -1,11 +1,12 @@
 var Player = Player || {};
-var intro_state;
-
-typeWriter(0, "Hello fellow people\n", 100);
+var Game = Game || {};
+var level=0;
+var stage=0;
 
 function update(progress) {
   // Update the state of the world for the elapsed time since last render
   // console.log("Hi")
+  Game.stage(level);
 }
 
 function draw() {
@@ -22,3 +23,11 @@ function loop(timestamp) {
 }
 var lastRender = 0
 window.requestAnimationFrame(loop)
+
+Game.stage = function(level){
+
+  if(level == 0)//Intro
+  {
+    Game.level0(stage)
+  }
+}

@@ -1,20 +1,38 @@
 var Player = Player || {};
+var textarea = document.getElementById("ta");
+var textbox = document.getElementById("textBox");
+var response ="";
 // $('#t').t();
 
 Player.readInput = function(e){
 
   if(e.keyCode ==13){
-    var textbox = document.getElementById("textBox");
-    var response = textbox.value;
+    response = textbox.value;
     textbox.value = "";
-    typeWriter(0, "Success\n", 100);
+    // typeWriter("Success\n");
   }
 }
 
-typeWriter = function(i, txt, speed) {
+var i=0;
+var speed=75;
+typeWriter = function(txt, color="none") {
+  i=0;
+  textbox.readOnly = true;
+  if(color == "none") {typeWrite(txt);}
+  textarea.addEventListener("msgWrote", function(){
+    textbox.readOnly = false;
+  } )
+}
+
+typeWrite = function(txt) {
   if( i < txt.length){
-    document.getElementById("ta").innerHTML += txt.charAt(i);
+    textarea.innerHTML += txt.charAt(i);
     i++;
-    setTimeout(typeWriter, speed, i , txt, speed);
+    setTimeout(typeWrite, speed, txt);
   }
+  else{
+    var event = new CustomEvent("msgWrote");
+    textarea.dispatchEvent(event);
+  }
+  return true;
 }
