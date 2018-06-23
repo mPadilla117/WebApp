@@ -14,7 +14,7 @@ Player.readInput = function(e){
 }
 
 var i=0;
-var speed=75;
+var speed=10;
 typeWriter = function(txt, color="none") {
   i=0;
   textbox.readOnly = true;

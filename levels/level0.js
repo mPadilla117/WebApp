@@ -4,7 +4,7 @@ var messages = [];
 
 messages[0]="Hello!\n\
 You look lost? Are you looking for something?\n\
-\"Yes\") Of course! \"No\")Just looking[skip to site]\n"
+\"Yes\") Of course! \"No\") Just looking[skip to site]\n"
 
 messages[1]="\nWelcome young wizard to this ancient library!\n\
 Before you can find the information that you seek, I must show you how to navigate \

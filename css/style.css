@@ -1,0 +1,9 @@
+#ta {
+    margin-top:2em;
+    margin-bottom:2em;
+    height:100px;
+    width:40%;
+    border:1px solid #000;
+    overflow:auto;
+    white-space: pre-wrap;
+}
